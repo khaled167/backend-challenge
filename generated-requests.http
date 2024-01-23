@@ -1,0 +1,102 @@
+###
+@name = Add Event
+@author = Khaled Qassim
+POST http://127.0.0.1:8080/events/v1
+Content-Type: application/json
+
+{
+  "htmlViewer": "<tag>title<tag><tag>body<tag>",
+  "startDate": "2024-07-01",
+  "endDate": "2024-07-03",
+  "categories": [
+    "Technology",
+    "ai",
+    "Future",
+    "fintech"
+  ]
+}
+
+###
+POST http://127.0.0.1:8080/tickets/v1
+Content-Type: application/json
+
+{
+  "type": "VIP"
+}
+
+###
+POST http://127.0.0.1:8080/eventTickets
+Content-Type: application/json
+
+{
+  "totalAvailableTickets": 100,
+  "price": 100,
+  "eventId": 1,
+  "ticketId": 1
+}
+
+###
+POST http://127.0.0.1:8080/promoCodes/v1
+Content-Type: application/json
+
+{
+  "code": "XMAS-24",
+  "discountPercentage": 50,
+  "expiryDate": "2024-12-31",
+  "limitedCount": 5
+}
+
+###
+POST http://127.0.0.1:8080/visitors/v1
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "secret_password",
+  "firstName": "John",
+  "lastName": "Doe",
+  "nationalId": "123456789",
+  "nationality": "US",
+  "city": "New York",
+  "address": "123 Main St",
+  "emailAddress": "john.doe@example.com",
+  "phoneNumber": "+1234567890",
+  "gender": "male",
+  "age": 30,
+  "cardNumber": "4556737586899855",
+  "cardCVV": "123",
+  "birthDay": "1999-07-16",
+  "active": true
+}
+
+###
+POST http://127.0.0.1:8080/payments/v1/transactions/1
+Content-Type: application/json
+
+{
+  "promoCodeId": 1,
+  "eventId": 1,
+  "ticketId": 1,
+  "numberOfTickets": 3
+}
+
+###
+GET http://127.0.0.1:8080/payments/v1/transactions/1
+
+###
+GET http://localhost:8080/categories/v1
+
+###
+GET http://127.0.0.1:8080/events/v1
+
+###
+GET http://localhost:8080/events/v1/1
+
+###
+POST http://127.0.0.1:8080/payments/v1/refunds/1/1
+Content-Type: application/json
+
+"Not happy with event"
+
+###
+GET http://127.0.0.1:8080/payments/v1/refunds/1
